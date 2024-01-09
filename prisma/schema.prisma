@@ -45,8 +45,8 @@ model Account {
   session_state      String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@unique([provider, providerAccountId])
+//combination of provider and providerAccountId must be unique
+  @@unique([provider, providerAccountId]) 
 }
 
 model Conversation {
